@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	body{
+		perspective:-900px; 
+	}
+		.box{
+			width: 100px;
+			height: 100px;
+			margin: 100px auto;
+			position: relative;
+			animation:_roll 2s linear infinite;
+			transform-style: preserve-3d;
+			transform-origin:center center -50px;
+		}
+		@keyframes _roll{
+			from{ transform: rotateX(0) rotateY(0); }
+			to{ transform: rotateX(360deg) rotateY(360deg); }
+		}
+		.box:hover{
+			animation-play-state:paused;
+		}
+		.box span{
+			position: absolute;
+			display: block;
+			transition: all 2s linear;
+			opacity: 0.5;
+		}
+		.box span:nth-child(1){
+			width: 100px;
+			height: 100px;
+			background: #F90;
+			transform: translate3d(0,0,0);
+		}
+		.box span:nth-child(2){
+			width: 100px;
+			height: 100px;
+			background: #03ccbb;
+			transform: translate3d(0,0,0) rotateX(-90deg);
+			transform-origin:0 0;	
+		}
+		.box span:nth-child(3){
+			width: 100px;
+			height: 100px;
+			background: #d34545;
+			transform: translate3d(0,0,0) rotateX(90deg);
+			transform-origin:bottom left;
+		}
+		.box span:nth-child(4){
+			width: 100px;
+			height: 100px;
+			background: #475dcf;
+			transform: translate3d(0,0,-100px);
+			transform-origin:bottom left;
+		}
+		.box span:nth-child(5){
+			width: 100px;
+			height: 100px;
+			background: #88c234;
+			transform: translate3d(0,0,0) rotateY(90deg);
+			transform-origin:top left;
+		}
+		.box span:nth-child(6){
+			width: 100px;
+			height: 100px;
+			background: #2aad20;
+			transform: translate3d(0,0,0) rotateY(-90deg);
+			transform-origin:top right;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+	</div>
+</body>
+</html>

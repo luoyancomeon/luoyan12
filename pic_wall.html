@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<style>
+		body,html{
+			background: #eee;
+		}
+		.wall{
+			width: 1200px;
+			height: 608px;
+			border: solid 2px #FFF;
+			margin: 60px auto;
+			background: url(images/pic/zhuan.jpg) repeat left top;
+			position: relative;
+		}
+		.wall img{
+			width: 240px;
+			height: auto;
+			border: solid 2px #ccc;
+			padding: 5px;
+			background: #FFF;
+			position: absolute;
+			left: 100px;
+			top:100px;
+			transition:all 0.5s linear;
+		}
+	</style>
+</head>
+<body>
+	<div class="wall">
+		<img src="images/pic/1.jpg" />
+		<img src="images/pic/2.jpg" />
+		<img src="images/pic/3.jpg" />
+		<img src="images/pic/4.jpg" />
+		<img src="images/pic/5.jpg" />
+		<img src="images/pic/6.jpg" />
+		<img src="images/pic/7.jpg" />
+		<img src="images/pic/8.jpg" />
+		<img src="images/pic/9.jpg" />
+		<img src="images/pic/10.jpg" />
+		<img src="images/pic/11.jpg" />
+		<img src="images/pic/12.jpg" />
+	</div>
+	<script>
+	window.onload=function(){
+		var oWall = document.getElementsByClassName('wall')[0];
+		var aImg = oWall.getElementsByTagName('img');
+		var rotArr = [20, -13, 25, -45, 30, -15];
+		for(var i=0; i<aImg.length; i++){
+			var x = Math.floor(Math.random()*(1200-aImg[0].offsetWidth-160))+80;
+			var y = Math.floor(Math.random()*(608-aImg[0].offsetHeight-64))+32;
+			var rotIndex = Math.floor(Math.random()*rotArr.length);
+
+			aImg[i].style["transform"] = "rotate("+rotArr[rotIndex]+"deg)";
+
+			aImg[i].style["left"] = x + "px";
+			aImg[i].style["top"] = y + "px";
+			aImg[i].onmouseover=function(){
+				this.style["transform"] = "rotate(0deg) scale(1.4)";
+				this.style["zIndex"] = "2";
+				this.onmouseout=function(){
+					var rotIndex = Math.floor(Math.random()*rotArr.length);
+					this.style["transform"] = "rotate("+rotArr[rotIndex]+"deg)";
+					this.style["zIndex"] = "0"
+				}
+			}
+		}
+	}
+	</script>
+	<style>
+		.box{
+			width: 100px;
+			height: 100px;
+			background: #FFF;
+			box-shadow: 10px 10px 0px rgba(255, 153, 0, 1);
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+	</style>
+	<div class="box"></div>
+</body>
+</html>

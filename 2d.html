@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body{
+			perspective: 500px;
+		}
+		.box{
+			width: 200px;
+			height: 200px;
+			background: #F90;
+			margin: 40px auto;
+			box-shadow: -10px 10px 10px #999;
+			cursor: pointer;
+			/*skew(45deg)
+			 scale(1.5)
+			 translate(100px,100px)*/
+			 text-align: center;
+			 line-height: 200px;
+			 padding-top: 30px;
+			 box-sizing: border-box;
+		}
+		.box:hover img{
+			transform: translate(-5px,0px);
+		}
+		.box img{
+			transition:all 200ms linear;
+			width: 90%;
+			height: auto;
+		}
+	</style>
+</head>
+<body>
+<!-- css3变换：transform -->
+	<div class="box">
+		<img src="images/meituan.jpg" />
+	</div>
+	<div class="box">
+		<img src="images/meituan.jpg" />
+	</div>
+	<div class="box">
+		<img src="images/meituan.jpg" />
+	</div>
+	<div class="box">
+		<img src="images/meituan.jpg" />
+	</div>
+	<div class="box">
+		<img src="images/meituan.jpg" />
+	</div>
+	<div class="box">
+		<img src="images/meituan.jpg" />
+	</div>
+	<div class="box">
+		<img src="images/meituan.jpg" />
+	</div>
+	<div class="box">
+		<img src="images/meituan.jpg" />
+	</div>
+</body>
+</html>
